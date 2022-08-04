@@ -20,7 +20,7 @@ void binarySearch(int arr[], int left, int right, int find)
 		// }
 		// printf("\n");
 
-		int m = (left/2) + (right/2);
+		int m = (right+left)/2;
         comparsion +=1;
 
 		if (arr[m] == find){
@@ -29,10 +29,12 @@ void binarySearch(int arr[], int left, int right, int find)
 			break;
         }
        
-		if (find < arr[m])
-			right = m-1;
-		else
-			left = m + 1;
+		if (arr[m]<find)
+			left = m+1;
+
+		if(arr[m]>find){
+			right = m - 1;
+		}
 
 	}
 
@@ -77,4 +79,7 @@ int main(void)
     
 	return 0;
 }
+
+
+
 
